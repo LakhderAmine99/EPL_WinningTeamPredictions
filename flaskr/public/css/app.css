@@ -1,0 +1,448 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    overflow: hidden;
+    background-color: #220f36;
+    color: #fff;
+    font-family: 'roboto' , sans-serif;
+}
+
+header{
+    background-color: rgb(67, 0, 100);
+    color: white;
+    padding: 1rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(67, 0, 100);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+h3 
+{
+    color: rgb(179, 0, 255);
+    padding-top: 1rem ;
+    background-color:  linear-gradient(to right, rgb(139, 4, 207), rgb(197, 49, 255));
+}
+
+h4
+{
+    color: rgb(255, 0, 183);
+    font-size: 14px;
+}
+
+.container
+{
+    margin: 0 auto;
+    width: 1250px;
+}
+
+#app
+{
+    overflow: auto;
+    height: 100vh;
+}
+
+main
+{
+    padding-bottom: 2rem;
+}
+
+#content
+{
+    padding: 1rem 0;
+}
+
+.logo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.logo img
+{
+    width: 28%;
+}
+
+.logo-title
+{
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.des
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,300px));
+    grid-gap: 1rem;
+    transition: all 0.6s ease-out;
+}
+
+.card
+{
+    position: relative;
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    height: 300px;
+    font-size: 25px;
+    font-weight: bold;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 300px;
+    cursor: pointer;
+    transition: all 0.6s ease-out;
+}
+
+.card-title
+{
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    left: 0;
+    padding: 2rem;
+    background-color: #2a002e71;
+    border-top-right-radius: 1rem;
+    transition: all 0.6s ease-out;
+}
+
+.card:hover
+{
+    transform: scale(1.05);
+}
+
+.card:hover .card-title
+{
+    transform: translateY(-150%);
+}
+
+.evaluate-card,.test-card,.predict-card
+{
+    color: rgba(255, 255, 255, 0.567);
+    /* background-color: rgb(125, 0, 162); */
+    background: linear-gradient(to right, rgb(150, 5, 208), rgb(126, 0, 164),rgb(116, 0, 151));
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-card
+{
+    background: linear-gradient(to right, rgb(125, 0, 162), rgb(44, 0, 58));
+}
+
+.predict-card
+{
+    background: linear-gradient(to right bottom, rgb(117, 1, 184), rgb(94, 0, 134),#2a002e);
+}
+
+#back-btn
+{
+    background: linear-gradient(to left,rgb(123, 0, 145),rgb(58, 0, 77));
+    color: white;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#plots-container,#test-container,#predictions-container{
+    position: relative;
+}
+
+.fixture
+{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fixture-head
+{
+    display: flex;
+    align-items: center;
+}
+
+.home
+{
+    margin-right: 1rem;
+    padding: 0.6rem;
+    background-color: rgb(136, 0, 255);
+    color: white;
+    border-radius: 0.5rem;
+
+}
+
+.away
+{
+    padding: 0.6rem;
+    margin-left: 1rem;
+    background-color: rgb(195, 8, 182);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.fixture-body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.fixture-result
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-top,.result-bottom
+{
+    padding: 0.6rem;
+    text-align: center;
+}
+
+.result-title
+{
+    font-size: 18px;
+    font-weight: bold;
+    /* color: #2a002e; */
+}
+
+.real-result,.predicted-result
+{
+    padding: 0.5rem;
+    font-size: 16px;
+    font-weight: bold;
+    /* color: #2a002e; */
+}
+
+.result 
+{
+    font-size: 12px;
+    width: 800px;
+    margin: 0.5rem 0;
+    height: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.model-title
+{
+    width: 30px;
+    font-size: 16px;
+    margin-right: 1rem;
+}
+
+.win
+{
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    background-color: rgb(136, 0, 255);
+}
+
+.draw
+{
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    background-color: rgb(145, 0, 168);
+}
+
+.loss
+{
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    background-color: rgb(195, 8, 182);
+}
+
+.pred-fixture
+{
+    padding: 1rem;
+    display: flex;
+    width: 310px;
+    border-radius: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: rgba(96, 0, 214, 0.064);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    transition: all 0.6s ease-out;
+}
+
+.pred-fixture:hover
+{
+    transform: translateY(-0.5rem);
+    color: white;
+    background-color: rgb(66, 0, 128);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.4);
+}
+
+.pred-fixture-head
+{
+    display: flex;
+    align-items: center;
+}
+
+.pred-fixture-body
+{
+    width: 100%;
+}
+
+.pred-home
+{
+    margin-right: 1rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+
+}
+
+.pred-away
+{
+    padding: 0.6rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+}
+
+.pred-result
+{
+    font-size: 12px;
+    width: 100%;
+    margin: 0.5rem 0;
+    height: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.pred-result .model-title
+{
+    font-size: 12px;
+}
+
+.pred-fixture:hover .real-result{
+    color: white !important;
+}
+
+.info
+{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 0;
+    text-align: left;
+    right: -150px;
+}
+
+.win-sym
+{
+    height: 30px;
+    width: 30px;
+    margin: 0.5rem 0.6rem;
+    border-radius: 50%;
+    background-color: rgb(136, 0, 255);
+}
+
+.away-sym
+{
+    height: 30px;
+    width: 30px;
+    margin: 0.5rem 0.6rem;
+    border-radius: 50%;
+    background-color: rgb(195, 8, 182);
+}
+
+.draw-sym
+{
+    height: 30px;
+    width: 30px;
+    margin: 0.5rem 0.6rem;
+    border-radius: 50%;
+    background-color: rgb(145, 0, 168);
+}
+
+.home-icon
+{
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+}
+
+.away-icon
+{
+    width: 40px;
+    height: 40px;
+    margin-left: 2rem;
+}
+
+/***************** classes **************/
+
+.hide{
+    display: none;
+}
+
+.fade-bottom
+{
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+.fade-out-top
+{
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+@media screen and (max-width: 720px)
+{
+    .container
+    {
+        width: 100%;
+    }
+
+    #predictions-container
+    {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .pred-fixture
+    {
+        width: 480px;
+    }
+
+    .content
+    {
+        width: 100%;
+    }
+}

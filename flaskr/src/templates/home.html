@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPL - WTP</title>
+    <link rel="stylesheet" href="../../public/css/app.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="container logo">
+                <img src="../../public/assets/premier-league-logo-header-full.png" alt="">
+            </div>
+        </header>
+        <main class="container">
+            <div id="content">
+                <div id="back-btn" class="hide">Back To Menu</div>
+                <div class="grid" id="home-cards">
+                    <div class="card evaluate-card" id="evaluate">
+                        <img class="des" src="../../public//assets/download (3).svg" alt="">
+                        <div class="card-title">
+                            Evaluate The Models
+                        </div>
+                    </div>
+                    <div class="card test-card" id="test">
+                        <img class="des"  src="../../public//assets/video-bg.svg" alt="">
+                        <div class="card-title">
+                            Test The Models
+                        </div>
+                    </div>
+                    <div class="card predict-card" id="predictions">
+                        <img class="des" src="../../public//assets/download (1).svg" alt="">
+                        <div class="card-title">
+                            Make Predictions
+                        </div>
+                    </div>
+                </div>
+                <div name="plots-component" class="hide" id="plost-template">
+                    <div id="plots-container">
+                        <br>
+                        <h3>Evaluating The Models</h3>
+                        <br>
+                        <h4>Scores</h4>
+                        <br>
+                        <div id="scores"></div>
+                        <br><br><br>
+                        <h4>KNN Roc Curve</h4>
+                        <br>
+                        <div id="knn-roc-curve"></div>
+                        <br>
+                        <h4>SVM Roc Curve</h4>
+                        <br>
+                        <div id="svm-roc-curve"></div>
+                        <br>
+                        <h4>Descision Trees Roc Curve</h4>
+                        <br>
+                        <div id="dt-roc-curve"></div>
+                        <br>
+                        <h4>Random Forest Roc Curve</h4>
+                        <br>
+                        <div id="rf-roc-curve"></div>
+                        <br>
+                    </div>
+                </div>
+                <div name="testing-component" class="hide" id="test-template">
+                    <div id="test-container">
+                        <div class="info">
+                            <div>
+                                Home<div class="win-sym"></div>
+                            </div>
+                            <div>
+                                Away<div class="away-sym"></div>
+                            </div>
+                            <div>
+                                Draw<div class="draw-sym"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <h3>Testing The Models</h3>
+                        <br>
+                        <h4>Games Played</h4>
+                        <br><br><br>
+                        <div id="testing-fixtures">
+                            <div class="fixture hide">
+                                <div class="fixture-head">
+                                    <div class="home"></div>
+                                    <div>vs</div>
+                                    <div class="away"></div>
+                                </div>
+                                <div class="fixture-result">
+                                    <div class="result-top">
+                                        <div class="result-title">
+                                            Real Result
+                                        </div>
+                                        <div class="real-result">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="result-bottom">
+                                        <div class="result-title">
+                                            Predicted Result ( SVM )
+                                        </div>
+                                        <div class="predicted-result">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fixture-body">
+                                    <div class="result knn-result">
+                                        <div class="model-title">
+                                            KNN
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="result svm-result">
+                                        <div class="model-title">
+                                            SVM
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="result dt-result">
+                                        <div class="model-title">
+                                            DT
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="result rf-result">
+                                        <div class="model-title">
+                                            RF
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div name="predict-component" class="hide" id="predict-template">
+                    <div id="predictions-container">
+                        <br>
+                        <h3>Predictions</h3>
+                        <br>
+                        <h4>This Week Fixtures</h4>
+                        <br><br><br>
+                        <div id="predicted-fixtures" class="grid">
+                            <div class="pred-fixture hide">
+                                <div class="pred-fixture-head">
+                                    <img class="home-icon" src="" alt="">
+                                    <!-- <div class="pred-home"></div> -->
+                                    <div>vs</div>
+                                    <img class="away-icon" src="" alt="">
+                                    <!-- <div class="pred-away"></div> -->
+                                </div>
+                                <div class="pred-fixture-result hide">
+                                    <div class="result-top">
+                                        <div class="real-result">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pred-fixture-body hide">
+                                    <div class="pred-result knn-result">
+                                        <div class="model-title">
+                                            KNN
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="pred-result svm-result">
+                                        <div class="model-title">
+                                            SVM
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="pred-result dt-result">
+                                        <div class="model-title">
+                                            DT
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                    <div class="pred-result rf-result">
+                                        <div class="model-title">
+                                            RF
+                                        </div>
+                                        <div class="win"></div>
+                                        <div class="draw"></div>
+                                        <div class="loss"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            2022 &copy; EPL-WTP - All rights reserved - Lakhder Amine - FST Fes
+        </footer>
+    </div>
+
+    <script async src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+    <script async src="../../public/scripts/app.js"></script>
+</body>
+</html>
